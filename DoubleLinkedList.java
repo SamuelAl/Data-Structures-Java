@@ -273,5 +273,25 @@ public class DoubleLinkedList <T> implements Iterable <T> {
 			}
 		};
 	}
+	
+	@Override
+	public String toString()
+	{
+		String string = "";
+		if (isEmpty()) return "[]";
+		
+		string += "[";
+		trav = head;
+		string += trav.data;
+		trav = trav.next;
+		while (trav != null)
+		{
+			string += ", " + trav.data.toString();
+			trav = trav.next;
+		}
+		string += "]";
+		
+		return string;
+	}
 
 }
